@@ -1,6 +1,7 @@
 import sys
 import pygame
 from enemies.BaseEnemy import BaseEnemy
+from map.Map import Map
 
 
 class Game:
@@ -13,6 +14,7 @@ class Game:
         # TODO Initialize all class veriables here
         self.enemies = []
         self.towers = []
+        self.map = Map(500,500, [])
         self.base_enemy = BaseEnemy(10, 10)
 
     def start(self):
@@ -30,6 +32,7 @@ class Game:
 
     def draw(self):
         self.screen.fill([0, 0, 0])
+        self.map.draw(self.screen)
         self.base_enemy.draw(self.screen)
         pygame.display.update()
 
