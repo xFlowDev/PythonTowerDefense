@@ -1,4 +1,6 @@
-import pygame, sys
+import sys
+import pygame
+from enemies.BaseEnemy import BaseEnemy
 
 
 class Game:
@@ -11,6 +13,7 @@ class Game:
         # TODO Initialize all class veriables here
         self.enemies = []
         self.towers = []
+        self.base_enemy = BaseEnemy(10, 10)
 
     def start(self):
         while 1:
@@ -23,6 +26,12 @@ class Game:
                 pygame.quit()
                 sys.exit()
 
+        self.base_enemy.update()
+
     def draw(self):
         self.screen.fill([0, 0, 0])
-        pygame.display.flip()
+        self.base_enemy.draw(self.screen)
+        pygame.display.update()
+
+    def spawn_enemy(self):
+        self.enemies.append()
