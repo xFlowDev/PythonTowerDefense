@@ -10,14 +10,14 @@ class BaseEnemy:
         # self.sprite = self.sprite_loader.load_sprite(self.sprite_basename, self.sprite_name)
         self.color = [255, 0, 0]
 
-        self.heigth = height
+        self.height = height
         self.width = width
         self.x = x
         self.y = y
 
     def update(self):
-        if self.y < (800 - self.heigth):
+        if self.y < (800 - self.height):
             self.y += 0.25
 
     def draw(self, screen):
-        pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.heigth))
+        pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
